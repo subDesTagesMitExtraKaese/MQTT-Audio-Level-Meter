@@ -9,8 +9,9 @@ import audioHandler
 mqtt_host = "localhost"
 mqtt_port = 1883
 interval = 20.0 # sec
+use_audio_sink = False
 
-audio = audioHandler.Listener(dataTime=interval if interval<5 else 5, agcTime=interval, input=True)
+audio = audioHandler.Listener(dataTime=interval if interval<5 else 5, agcTime=interval, input=not use_audio_sink)
 
 
 def main():
